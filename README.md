@@ -24,6 +24,23 @@ Compare two superheroes based on their stats.
 Interactive chatbot interface for user engagement.
 Supports various question formats.
 
+
+Retrieve Superhero Data: You can ask questions such as:
+"What is Batman's full name?"
+"Who is Spider-Man's publisher?"
+
+
+Compare Superheroes: You can compare superheroes by typing:
+"Batman vs Superman: fight"
+"Batman vs Superman: Intelligence"
+
+Full Profile: Request a full profile(all of the above info) by asking:
+"What is Iron Man's full profile?"
+
+More detail on what can be called in "Data Used.txt"
+
+
+
 ## Requirements:
 Python 3.x
 requests library
