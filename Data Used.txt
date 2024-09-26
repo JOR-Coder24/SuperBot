@@ -1,0 +1,29 @@
+Here is a list of the attributes for each character in Superhero API:
+
+Full Name: The superhero's actual, legal name (e.g., Bruce Wayne for Batman).
+Alter Egos: Other identities or personas the superhero has used (e.g., Batman is also known as Matches Malone).
+Aliases: Nicknames or unofficial titles the superhero has gone by (e.g., "The Dark Knight" for Batman).
+Place of Birth: The location where the superhero was born or created.
+First Appearance: The comic, movie, or other media where the superhero was first introduced.
+Publisher: The company that owns and publishes the superhero (e.g., DC Comics, Marvel Comics).
+Alignment: Whether the character is generally good, evil, or neutral in moral terms.
+Gender: The character's gender identity.
+Race: The species or ethnic group the superhero belongs to (e.g., human, Kryptonian, etc.).
+Height: The superhero's height, usually given in feet and inches or centimetres.
+Weight: The superhero's weight, often given in pounds or kilograms.
+Eye Color: The colour of the superhero's eyes.
+Hair Color: The colour of the superhero's hair.
+Intelligence: A measure of the superhero's intellectual ability.
+Strength: The superhero's physical power, usually measuring their ability to lift, push, or strike objects.
+Speed: How fast the superhero can move, including running, flying, or any other form of transportation.
+Durability: A measure of how much physical damage the superhero can withstand.
+Power: The superhero's overall energy or ability to perform superhuman actions.
+Combat: The superhero's skill in fighting, both armed and unarmed.
+Group Affiliation: The organisations, teams, or groups the superhero is associated with (e.g., Justice League, Avengers).
+Relatives: The superhero's known family members or close relatives.
+
+
+Additional inputs:
+Full Profile: Provides all the above data
+Stats: For providing Intelligence, Strength, Speed, Durability, Power and Combat data
+"HeroA vs HeroB: x" replace x with one the above Stats to find out their compared values or put "fight" to compare all values listed under "stats"
