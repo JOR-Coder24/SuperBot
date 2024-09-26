@@ -6,6 +6,7 @@ Data extracted from SuperheroAPI( https://superheroapi.com/index.html )-you need
 Features:
 
 Retrieve detailed information about superheroes, including:
+    
     Full Name
     Alter Egos
     Aliases
@@ -22,6 +23,8 @@ Retrieve detailed information about superheroes, including:
     Power Stats (Intelligence, Strength, Speed, Durability, Power, Combat)
     Group Affiliation
     Relatives
+
+    
 Compare two superheroes based on their stats.
 Interactive chatbot interface for user engagement.
 Supports various question formats.
