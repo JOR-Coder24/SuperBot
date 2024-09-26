@@ -24,11 +24,10 @@ Compare two superheroes based on their stats.
 Interactive chatbot interface for user engagement.
 Supports various question formats.
 
-
+## Inputs
 Retrieve Superhero Data: You can ask questions such as:
 "What is Batman's full name?"
 "Who is Spider-Man's publisher?"
-
 
 Compare Superheroes: You can compare superheroes by typing:
 "Batman vs Superman: fight"
