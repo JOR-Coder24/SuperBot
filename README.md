@@ -3,7 +3,6 @@ Welcome to SuperBot, a chatbot designed to provide information about various sup
 
 Data extracted from SuperheroAPI( https://superheroapi.com/index.html )-you need a GitHub account to gain access to it.
 
-Features:
 
 Retrieve detailed information about superheroes, including:
     
