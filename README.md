@@ -13,23 +13,17 @@ Retrieve detailed information about superheroes, including:
     Place of Birth
     First Appearance
     Publisher
-    Alignment
-    Gender
-    Race
-    Height
-    Weight
-    Eye Color
-    Hair Color
-    Power Stats (Intelligence, Strength, Speed, Durability, Power, Combat)
+    Stats (Intelligence, Strength, Speed, Durability, Power, Combat)
     Group Affiliation
-    Relatives
 
     
+
+## Inputs
+
 Compare two superheroes based on their stats.
 Interactive chatbot interface for user engagement.
 Supports various question formats.
 
-## Inputs
 Retrieve Superhero Data: You can ask questions such as:
 "What is Batman's full name?"
 "Who is Spider-Man's publisher?"
@@ -46,8 +40,9 @@ More detail on what can be called in "Data Used.txt"
 
 
 ## Requirements:
-Python 3.x
-requests library
+
+Python 3.x,
+requests library,
 An API key from Superhero API
 
 Retrieve Superhero Data: You can ask questions such as:
