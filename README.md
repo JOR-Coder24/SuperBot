@@ -1,6 +1,8 @@
 # Superbot
 Welcome to SuperBot, a chatbot designed to provide information about various superheroes and villains from multiple universes, including DC, Marvel, Star Wars, and IDW. With SuperBot, you can ask questions about superhero profiles, compare characters, and explore their unique attributes.
 
+There is a CLI and a GUI available for download
+
 Data extracted from SuperheroAPI( https://superheroapi.com/index.html )-you need a GitHub account to gain access to it.
 
 
