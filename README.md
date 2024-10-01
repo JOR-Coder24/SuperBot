@@ -43,7 +43,8 @@ More detail on what can be called in "Data Used.txt"
 ## Requirements:
 
 Python 3.x,
-libraries-"requests", "re", "config", "tkinter",
+
+Libraries-"requests", "re", "config", "tkinter",
 
 An API key from Superhero API
 
