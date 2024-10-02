@@ -50,7 +50,7 @@ An API key from Superhero API
 
 
 
-## Warning
+### Warning
 There is an issue with the program in that it is unable to distinguish between characters with the same "superhero name". For example, if you want to ask for Batman's details, it will provide you with Terry McGinnis. This is because whoever made the API didn't distinguish in "name" value for certain characters(did for others though-i.e Flash, Flash II, Flash III). I have been unable to figure out how to get past this so far. If you see this and have any ideas, let me know.
 
 
