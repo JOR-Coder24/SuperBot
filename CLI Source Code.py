@@ -8,10 +8,8 @@ def get_character_data(character_name):
     response = requests.get(url)
     return response.json()
 
-
 def extract_superhero_data(data, character_name):
     if 'results' in data and data['results']:
-        # Filter results by the queried character name
         for superhero in data['results']:
             if superhero['name'].lower() == character_name.lower():
                 return {
@@ -40,7 +38,7 @@ def extract_superhero_data(data, character_name):
                 }
     return {"error": "Character not found"}
 
-
+# Ensure answer_question is defined here
 def answer_question(superhero_data, question):
     question = question.lower()
     if "full name" in question:
@@ -122,7 +120,6 @@ def answer_question(superhero_data, question):
     else:
         return "I don't understand the question. Please ask about specific superhero data."
 
-
 def compare(superhero1_data, superhero2_data, stats):
     results = []
     superhero1_name = superhero1_data.get('Name', 'Unknown')  # Use 'Name' for superhero name
@@ -151,6 +148,7 @@ def compare(superhero1_data, superhero2_data, stats):
 
     return "\n".join(results)
 
+# The chatbot function
 def chatbot():
     print("""Welcome! I am SuperBot, the Superhero Chatbot! I have data on heroes and villains from many universes, including DC, Marvel, Star Wars and IDW. 
     I have info about hundreds of characters.
@@ -163,10 +161,9 @@ def chatbot():
             print("Goodbye!")
             break
 
-        # Extract the superhero's name from the question
         match = re.search(r'(what|who|when) (is|are|was) ([\w\s\-]+)(\'s| is|\'| )', user_input, re.IGNORECASE)
         if match:
-            character_name = match.group(3).strip()  # Group 3 captures the name including spaces
+            character_name = match.group(3).strip()
             superhero_data = get_character_data(character_name)
             extracted_data = extract_superhero_data(superhero_data, character_name)
 
@@ -175,9 +172,8 @@ def chatbot():
             else:
                 response = answer_question(extracted_data, user_input)
                 print(f"Superbot: {response}")
-            continue  # Skip to the next iteration after handling the question
+            continue
 
-        # Handle comparison questions
         match = re.search(r'(.+?) vs (.+?): (.+)', user_input, re.IGNORECASE)
         if match:
             character1 = match.group(1).strip()
@@ -185,8 +181,16 @@ def chatbot():
             comparison_type = match.group(3).strip().lower()
 
             stats_to_compare = []
+
             if comparison_type == "fight":
                 stats_to_compare = ['intelligence', 'strength', 'speed', 'durability', 'power', 'combat']
+            else:
+                available_stats = ['intelligence', 'strength', 'speed', 'durability', 'power', 'combat']
+                if comparison_type in available_stats:
+                    stats_to_compare = [comparison_type]
+                else:
+                    print(f"Superbot: I don't understand the comparison for '{comparison_type}'. Please specify a valid stat (e.g., 'speed', 'strength').")
+                    continue
 
             data1 = get_character_data(character1)
             data2 = get_character_data(character2)
@@ -203,7 +207,6 @@ def chatbot():
                 print(f"Superbot: {result}")
         else:
             print("Superbot: I didn't understand that. Please ask about a superhero's data.")
-
 
 # Start the chatbot
 chatbot()
