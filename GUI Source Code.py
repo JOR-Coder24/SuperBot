@@ -184,6 +184,15 @@ def chatbot_gui():
                 stats_to_compare = []
                 if comparison_type == "fight":
                     stats_to_compare = ['intelligence', 'strength', 'speed', 'durability', 'power', 'combat']
+                else:
+                    available_stats =  ['intelligence', 'strength', 'speed', 'durability', 'power', 'combat']
+
+                    # If the comparison type matches one of the available stats, compare only that stat
+                    if comparison_type in available_stats:
+                        stats_to_compare = [comparison_type]
+                    else:
+                        chat_area.insert(tk.END,"Superbot: I don't understand that comparison. Please specify a valid stat (e.g., 'speed', 'strength').\n",'bot')
+                        return
 
                 data1 = get_character_data(character1)
                 data2 = get_character_data(character2)
