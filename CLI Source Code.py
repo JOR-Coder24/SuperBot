@@ -182,7 +182,7 @@ def chatbot():
 
             stats_to_compare = []
 
-            if comparison_type == "fight":
+            if comparison_type == "stats":
                 stats_to_compare = ['intelligence', 'strength', 'speed', 'durability', 'power', 'combat']
             else:
                 available_stats = ['intelligence', 'strength', 'speed', 'durability', 'power', 'combat']
