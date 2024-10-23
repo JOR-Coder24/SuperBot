@@ -127,8 +127,11 @@ def answer_question(superhero_data, question):
 
 def compare(superhero1_data, superhero2_data, stats):
     results = []
-    superhero1_name = superhero1_data.get('Name', 'Unknown')  # Use 'Name' for superhero name
-    superhero2_name = superhero2_data.get('Name', 'Unknown')  # Use 'Name' for superhero name
+    superhero1_name = superhero1_data.get('Name', 'Unknown')
+    superhero2_name = superhero2_data.get('Name', 'Unknown')
+
+    superhero1_score = 0
+    superhero2_score = 0
 
     for stat in stats:
         stat = stat.lower()
@@ -146,10 +149,20 @@ def compare(superhero1_data, superhero2_data, stats):
 
         if stat1 > stat2:
             results.append(f"{superhero1_name} has higher {stat}: {stat1} vs {superhero2_name} {stat2}.")
+            superhero1_score += 1  # Increment score for superhero 1
         elif stat1 < stat2:
             results.append(f"{superhero2_name} has higher {stat}: {stat2} vs {superhero1_name} {stat1}.")
+            superhero2_score += 1  # Increment score for superhero 2
         else:
             results.append(f"Both {superhero1_name} and {superhero2_name} have the same {stat}: {stat1}.")
+
+    # Determine winner
+    if superhero1_score > superhero2_score:
+        results.append(f"\n{superhero1_name} wins {superhero1_score}-{superhero2_score}!")
+    elif superhero2_score > superhero1_score:
+        results.append(f"\n{superhero2_name} wins {superhero2_score}-{superhero1_score}!")
+    else:
+        results.append(f"\nIt's a tie with a score of {superhero1_score}-{superhero2_score}!")
 
     return "\n".join(results)
 
@@ -170,10 +183,10 @@ def chatbot_gui():
             extracted_data = extract_superhero_data(superhero_data, character_name)
 
             if "error" in extracted_data:
-                chat_area.insert(tk.END, f"Superbot: {extracted_data['error']}\n", 'bot')  # Insert bot text with 'bot' tag
+                chat_area.insert(tk.END, f"SuperBot: {extracted_data['error']}\n", 'bot')  # Insert bot text with 'bot' tag
             else:
                 response = answer_question(extracted_data, user_input)
-                chat_area.insert(tk.END, f"Superbot: {response}\n", 'bot')
+                chat_area.insert(tk.END, f"SuperBot: {response}\n", 'bot')
         else:
             match = re.search(r'(.+?) vs (.+?): (.+)', user_input, re.IGNORECASE)
             if match:
@@ -191,7 +204,7 @@ def chatbot_gui():
                     if comparison_type in available_stats:
                         stats_to_compare = [comparison_type]
                     else:
-                        chat_area.insert(tk.END,"Superbot: I don't understand that comparison. Please specify a valid stat (e.g., 'speed', 'strength').\n",'bot')
+                        chat_area.insert(tk.END,"SuperBot: I don't understand that comparison. Please specify a valid stat (e.g., 'speed', 'strength').\n",'bot')
                         return
 
                 data1 = get_character_data(character1)
@@ -201,14 +214,14 @@ def chatbot_gui():
                 extracted_data2 = extract_superhero_data(data2, character2)
 
                 if "error" in extracted_data1:
-                    chat_area.insert(tk.END, f"Superbot: {extracted_data1['error']}\n", 'bot')
+                    chat_area.insert(tk.END, f"SuperBot: {extracted_data1['error']}\n", 'bot')
                 elif "error" in extracted_data2:
-                    chat_area.insert(tk.END, f"Superbot: {extracted_data2['error']}\n", 'bot')
+                    chat_area.insert(tk.END, f"SuperBot: {extracted_data2['error']}\n", 'bot')
                 else:
                     result = compare(extracted_data1, extracted_data2, stats_to_compare)
-                    chat_area.insert(tk.END, f"Superbot: {result}\n", 'bot')
+                    chat_area.insert(tk.END, f"SuperBot: {result}\n", 'bot')
             else:
-                chat_area.insert(tk.END, "Superbot: I didn't understand that. Please ask about a superhero's data.\n", 'bot')
+                chat_area.insert(tk.END, "SuperBot: I didn't understand that. Please ask about a superhero's data.\n", 'bot')
 
         entry.delete(0, tk.END)
 
