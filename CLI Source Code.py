@@ -184,7 +184,7 @@ def chatbot():
                 print(f"Superbot: {extracted_data['error']}")
             else:
                 response = answer_question(extracted_data, user_input)
-                print(f"Superbot: {response}")
+                print(f"Superbot: {character_name} - {response}")
             continue
 
         match = re.search(r'(.+?) vs (.+?): (.+)', user_input, re.IGNORECASE)
