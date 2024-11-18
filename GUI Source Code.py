@@ -186,7 +186,7 @@ def chatbot_gui():
                 chat_area.insert(tk.END, f"SuperBot: {extracted_data['error']}\n", 'bot')  # Insert bot text with 'bot' tag
             else:
                 response = answer_question(extracted_data, user_input)
-                chat_area.insert(tk.END, f"SuperBot: {response}\n", 'bot')
+                chat_area.insert(tk.END, f"SuperBot: {character_name} - {response}\n", 'bot')
         else:
             match = re.search(r'(.+?) vs (.+?): (.+)', user_input, re.IGNORECASE)
             if match:
